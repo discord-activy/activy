@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
+  },
+  "name": "Activy",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {
+    "electron": "^23.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "build": {
+    "directories":{
+      "output": "build"
+    },
+    "win": {
+          "target": "nsis",
+          "icon": "build/icon.png"
+        }
+    }
+  }

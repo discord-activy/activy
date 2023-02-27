@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Activy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';"/>
+</head>
+<body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            background-color: #23272a;
+            font-family: 'Rubik', sans-serif;
+            user-select: none;
+        }
+
+        /******************************************************************************************/
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+        /* display: none; <- Crashes Chrome on hover */
+            -webkit-appearance: none;
+            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+        }
+        /*
+        This ^^ took from https://stackoverflow.com/a/4298216
+        */
+
+        *:focus {
+            outline: 0;
+            outline-color: transparent;
+            outline-style: none;
+        }
+
+    </style>
+
+    <h1 class="text-white text-left ml-5 font-extrabold text-3xl mt-4">
+        Activy
+    </h1>
+
+    <br>
+    <div class="grid gap-6 mb-6 md:grid-cols-2">
+        <div>
+            <h3 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-xl ml-5">Client ID </h3>
+            <input type="number" id="client_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-48 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-5" placeholder="1234567890">
+        </div>
+        <div>
+            <h3 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-xl ml-5">Details</h3>
+            <input type="text" id="details" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-80 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-5" placeholder="Playing my fav game">
+        </div>
+        <div>
+            <h3 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-xl ml-5">Large Image</h3>
+            <input type="text" id="large_image" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-48 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-5" placeholder="My cool Image">
+        </div>
+        <div>
+            <h3 class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-xl ml-5">Large Text</h3>
+            <input type="text" id="large_text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-64 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 ml-5" placeholder="This is an epic game!">
+        </div>
+
+        <button type="button" onclick="start()" class="content-left ml-5 text-white w-48 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Start</button>
+
+    </div>
+</body>
+<script src="./renderer.js"></script>
+<script defer>
+
+    if(localStorage.getItem('clientData') != undefined){
+        load_data();
+    }
+</script>
+</html>
